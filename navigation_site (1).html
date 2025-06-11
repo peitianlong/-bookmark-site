@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨境电商工具导航站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .search-container {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .category {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .category h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .links {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .link-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #4a5568;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .link-item:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+            transform: translateX(5px);
+            border-color: #cbd5e0;
+        }
+
+        .link-item:active {
+            transform: scale(0.98);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1rem 4rem;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 跨境电商工具导航</h1>
+        <p>精选优质跨境电商工具，助力您的出海业务腾飞</p>
+    </div>
+
+    <div class="container">
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="🔍 搜索工具或网站..." id="searchInput">
+        </div>
+
+        <div class="categories" id="categoriesContainer">
+            <div class="category" data-category="数据分析">
+                <h2><span class="category-icon">📊</span>数据分析工具</h2>
+                <div class="links">
+                    <a href="https://www.junglescout.cn/features-product-database/" class="link-item" target="_blank">Jungle Scout - 数据分析工具</a>
+                    <a href="https://www.sellersprite.com/cn/" class="link-item" target="_blank">卖家精灵 - 亚马逊选品工具</a>
+                    <a href="https://www.geekbi.com/temu/goods/hot-sale" class="link-item" target="_blank">极鲸云数据 - Temu数据分析</a>
+                    <a href="https://www.temushuju.com/goods/hot-sale" class="link-item" target="_blank">Temu选品助手</a>
+                    <a href="https://ixspy.com/data#/dashboard" class="link-item" target="_blank">ixspy - 产品研究工具</a>
+                    <a href="https://www.jiatongyitu.com/home.html#/home/tool" class="link-item" target="_blank">佳同跨境 - 选品工具</a>
+                    <a href="https://www.etsyshop.ai/zh" class="link-item" target="_blank">Etsyshop - Etsy产品研究</a>
+                    <a href="https://www.pipiads.com/zh" class="link-item" target="_blank">皮皮广告 - TikTok广告选品</a>
+                    <a href="https://www.kalodata.com/signup" class="link-item" target="_blank">Kalodata - TikTok电商数据</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="电商平台">
+                <h2><span class="category-icon">🛒</span>电商平台</h2>
+                <div class="links">
+                    <a href="https://www.temu.com/" class="link-item" target="_blank">Temu - 拼多多跨境</a>
+                    <a href="https://seller.ozon.ru/app/dashboard/main" class="link-item" target="_blank">Ozon - 俄罗斯电商平台</a>
+                    <a href="https://dchain-web.aliexpress.com/" class="link-item" target="_blank">速卖通直营AMS</a>
+                    <a href="https://csp.aliexpress.com/m_apps/aepop-product-manage/list-manage" class="link-item" target="_blank">速卖通商品管理</a>
+                    <a href="https://us.shein.com/" class="link-item" target="_blank">Shein美国站</a>
+                    <a href="https://seller.kuajingmaihuo.com/" class="link-item" target="_blank">拼多多跨境卖家中心</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="图片处理">
+                <h2><span class="category-icon">🖼️</span>图片/视频处理</h2>
+                <div class="links">
+                    <a href="https://picwish.cn/" class="link-item" target="_blank">佐糖 - 在线图片处理</a>
+                    <a href="https://www.yiketu.com/" class="link-item" target="_blank">易可图 - 免费图片编辑器</a>
+                    <a href="https://www.liblib.art/modelinfo/96d0084f722146f6933d43e65165a2ad" class="link-item" target="_blank">智能换装工作流</a>
+                    <a href="https://zhuanlan.zhihu.com/p/636167207" class="link-item" target="_blank">CR批量视频剪辑处理</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="网络工具">
+                <h2><span class="category-icon">🔗</span>网络工具</h2>
+                <div class="links">
+                    <a href="https://sakuracat-1.com/dashboard" class="link-item" target="_blank">SakuraCat VPN</a>
+                    <a href="https://portal.shadowsocks.au/" class="link-item" target="_blank">Shadowsocks</a>
+                    <a href="https://qiuyin.icu/me#/dashboard" class="link-item" target="_blank">蚯蚓机场</a>
+                    <a href="https://js.vvshop.me/#/dashboard" class="link-item" target="_blank">VvShop</a>
+                    <a href="https://666clouds.com/clientarea.php" class="link-item" target="_blank">六六云</a>
+                    <a href="https://tkidc.com/home" class="link-item" target="_blank">缇克网络</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="支付金融">
+                <h2><span class="category-icon">💳</span>支付/金融</h2>
+                <div class="links">
+                    <a href="https://b.alipay.com/page/home" class="link-item" target="_blank">支付宝商家平台</a>
+                    <a href="https://cn.lianlianpay.com/account" class="link-item" target="_blank">连连国际</a>
+                    <a href="https://222sim.com/" class="link-item" target="_blank">海外接码/虚拟信用卡</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="运营工具">
+                <h2><span class="category-icon">⚙️</span>运营/ERP工具</h2>
+                <div class="links">
+                    <a href="https://erp.91miaoshou.com/" class="link-item" target="_blank">妙手ERP - 跨境电商ERP</a>
+                    <a href="https://ozon.menglar.com/tools/" class="link-item" target="_blank">萌啦ozon定价精灵</a>
+                    <a href="https://shop.shulidata.com/overview" class="link-item" target="_blank">数立电商平台</a>
+                    <a href="https://sso.geiwohuo.com/" class="link-item" target="_blank">复议管理</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="实用工具">
+                <h2><span class="category-icon">🛠️</span>实用工具</h2>
+                <div class="links">
+                    <a href="https://dokidokiweb.com/" class="link-item" target="_blank">DokiDokiWeb - 实用工具导航</a>
+                    <a href="https://trends.google.com/trends/" class="link-item" target="_blank">Google 趋势</a>
+                    <a href="https://www.amz520.com/" class="link-item" target="_blank">AMZ520 - 跨境卖家导航</a>
+                    <a href="https://www.zhihuiya.com/" class="link-item" target="_blank">智慧芽 - 专利查询平台</a>
+                    <a href="https://copilot.wps.cn/chat/9021672472117371" class="link-item" target="_blank">WPS 灵犀</a>
+                    <a href="https://www.amz520.com/ai.html" class="link-item" target="_blank">AI工具导航</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="学习资源">
+                <h2><span class="category-icon">📚</span>学习/资源</h2>
+                <div class="links">
+                    <a href="https://scys.com/activity" class="link-item" target="_blank">生财有术 - 实战活动</a>
+                    <a href="https://docs.qq.com/doc/DSERJVGhCWE9Ic2xu" class="link-item" target="_blank">跨境电商运营资料库</a>
+                    <a href="https://www.youtube.com/watch?v=cgGQPm02Yak" class="link-item" target="_blank">Ozon跨境电商教程</a>
+                    <a href="https://www.youtube.com/watch?v=SpxTFes1B8U" class="link-item" target="_blank">节点搭建教程</a>
+                </div>
+            </div>
+
+            <div class="category" data-category="娱乐影视">
+                <h2><span class="category-icon">🎬</span>娱乐/影视</h2>
+                <div class="links">
+                    <a href="https://www.iqiyi.com/" class="link-item" target="_blank">爱奇艺</a>
+                    <a href="https://www.olevod.one/" class="link-item" target="_blank">欧乐影院</a>
+                    <a href="https://www.xinjuc.com/dianying" class="link-item" target="_blank">新剧坊</a>
+                    <a href="https://yingheapp.com/" class="link-item" target="_blank">硬核影视指南</a>
+                    <a href="https://www.meijutt.cc/" class="link-item" target="_blank">美剧天堂</a>
+                    <a href="https://91mjw.tv/" class="link-item" target="_blank">91美剧网</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 跨境电商工具导航站 | 让出海更简单</p>
+    </div>
+
+    <script>
+        // 搜索功能
+        const searchInput = document.getElementById('searchInput');
+        const categoriesContainer = document.getElementById('categoriesContainer');
+        const categories = document.querySelectorAll('.category');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            categories.forEach(category => {
+                const categoryTitle = category.querySelector('h2').textContent.toLowerCase();
+                const links = category.querySelectorAll('.link-item');
+                let hasVisibleLinks = false;
+
+                // 检查分类标题是否匹配
+                const categoryMatches = categoryTitle.includes(searchTerm);
+
+                links.forEach(link => {
+                    const linkText = link.textContent.toLowerCase();
+                    const linkMatches = linkText.includes(searchTerm);
+                    
+                    if (linkMatches || categoryMatches || searchTerm === '') {
+                        link.classList.remove('hidden');
+                        hasVisibleLinks = true;
+                    } else {
+                        link.classList.add('hidden');
+                    }
+                });
+
+                // 如果分类中有可见链接或分类标题匹配，显示该分类
+                if (hasVisibleLinks || categoryMatches || searchTerm === '') {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+        });
+
+        // 添加加载动画
+        window.addEventListener('load', function() {
+            categories.forEach((category, index) => {
+                category.style.opacity = '0';
+                category.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    category.style.transition = 'all 0.5s ease';
+                    category.style.opacity = '1';
+                    category.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // 链接点击统计（可选）
+        document.querySelectorAll('.link-item').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Clicked:', this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
